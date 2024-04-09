@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ProductList(names, quantities, prices) {
+    let data = [];
+
+    for (let i = 0; i < names.length; i++) {
+        data.push({
+            name: names[i],
+            quantity: quantities[i],
+            price: prices[i]
+        });
+    }
+    
+    let total = function () {
+        let totalAmount=0
+        totalAmount=data.reduce((total, item) => total + item.quantity * item.price, 0);
+        console.log(totalAmount)
+    };
+
+    total()
+    
+}
+
+const names = ["Rice", "Dal", "Salt"];
+const quantities = [2, 3, 1];
+const prices = [60, 50, 20];
+
+ProductList(names, quantities, prices);
+
+
+
+    </script>
+</body>
+</html>
