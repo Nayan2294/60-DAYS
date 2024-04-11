@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mini Calculator</h2>
+    <div id="main">
+       <input type="number" class="num1">
+       <input type="number" class="num2">
+
+       <br>
+        <br>
+       <button onclick="add()">Add</button>
+       <button onclick="sub()">Sub</button>
+       <button onclick="mult()">Mult</button>
+       <button onclick="div()">Div</button>
+    </div>
+    <script>
+        let num1=document.querySelector(".num1")
+        let num2=document.querySelector(".num2")
+
+        function add(){
+            let result=Number(num1.value )+ Number(num2.value)
+            alert(result)
+        }
+
+        function sub(){
+            let result=Number(num1.value )- Number(num2.value)
+            alert(result)
+        }
+
+        function mult(){
+            let result=Number(num1.value )* Number(num2.value)
+            alert(result)
+        }
+
+        function div(){
+            let result=Number(num1.value )/ Number(num2.value)
+            alert(result)
+        }
+
+        
+    </script>
+
+</body>
+</html>
