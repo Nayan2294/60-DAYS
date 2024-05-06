@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <div id="display">00:00</div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        let timer;
+        let seconds = 0;
+
+        const display = document.getElementById('display');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+        
+        function startTimer(){
+            timer = setInterval(updateTimer , 1000)
+            startBtn.disabled = true
+        }
+
+        function pauseTimer(){
+
+            clearInterval(timer);
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+        }
+
+            function updateTimer(){
+            seconds++ 
+            const displayMinutes = Math.floor(seconds/60);
+            const displaySeconds = seconds % 60;
+            display.textContent = displayMinutes.toString().padStart(2, "0") + ":" + displaySeconds.toString().padStart(2, "0")
+        }
+
+    </script>
+</body>
+</html>
